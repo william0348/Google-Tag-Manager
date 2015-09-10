@@ -1,0 +1,527 @@
+{
+    "exportFormatVersion": 1.3,
+    "exportTime": "2015-09-10 15:36:50",
+    "containerVersion": {
+        "accountId": "102181060",
+        "containerId": "1368498",
+        "containerVersionId": "0",
+        "deleted": false,
+        "container": {
+            "accountId": "102181060",
+            "containerId": "1368498",
+            "name": "yourname",
+            "publicId": "GTM-PQGFQ7",
+            "timeZoneCountryId": "US",
+            "timeZoneId": "America/Los_Angeles",
+            "notes": "",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1441899371173"
+        },
+        "tag": [
+            {
+                "accountId": "102181060",
+                "containerId": "1368498",
+                "tagId": "48",
+                "name": "Link Click",
+                "type": "lcl",
+                "liveOnly": false,
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "waitForTagsTimeout",
+                        "value": "2000"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "checkValidation",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "waitForTags",
+                        "value": "true"
+                    }
+                ],
+                "fingerprint": "0",
+                "firingTriggerId": [
+                    "22"
+                ]
+            },
+            {
+                "accountId": "102181060",
+                "containerId": "1368498",
+                "tagId": "51",
+                "name": "submit",
+                "type": "fsl",
+                "liveOnly": false,
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "waitForTagsTimeout",
+                        "value": "2000"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "checkValidation",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "waitForTags",
+                        "value": "true"
+                    }
+                ],
+                "fingerprint": "0",
+                "firingTriggerId": [
+                    "22"
+                ]
+            },
+            {
+                "accountId": "102181060",
+                "containerId": "1368498",
+                "tagId": "52",
+                "name": "點擊接聽",
+                "type": "cl",
+                "liveOnly": false,
+                "fingerprint": "0",
+                "firingTriggerId": [
+                    "22"
+                ]
+            }
+        ],
+        "fingerprint": "0",
+        "trigger": [
+            {
+                "accountId": "102181060",
+                "containerId": "1368498",
+                "triggerId": "19",
+                "name": "Click",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "MATCH_REGEX",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": ".*"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "gtm.linkClick"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{element url}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "http://"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "0"
+            },
+            {
+                "accountId": "102181060",
+                "containerId": "1368498",
+                "triggerId": "20",
+                "name": "track share",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "gtm.click"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{element url}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "share"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "0"
+            },
+            {
+                "accountId": "102181060",
+                "containerId": "1368498",
+                "triggerId": "21",
+                "name": "傳送",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "MATCH_REGEX",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": ".*"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "gtm.formSubmit"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "0"
+            },
+            {
+                "accountId": "102181060",
+                "containerId": "1368498",
+                "triggerId": "22",
+                "name": "所有網頁",
+                "type": "PAGEVIEW",
+                "filter": [
+                    {
+                        "type": "MATCH_REGEX",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{url}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": ".*"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "0"
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "102181060",
+                "containerId": "1368498",
+                "variableId": "58",
+                "name": "element",
+                "type": "aev",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "varType",
+                        "value": "ELEMENT"
+                    }
+                ],
+                "fingerprint": "0"
+            },
+            {
+                "accountId": "102181060",
+                "containerId": "1368498",
+                "variableId": "59",
+                "name": "element classes",
+                "type": "aev",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "varType",
+                        "value": "CLASSES"
+                    }
+                ],
+                "fingerprint": "0"
+            },
+            {
+                "accountId": "102181060",
+                "containerId": "1368498",
+                "variableId": "60",
+                "name": "element id",
+                "type": "aev",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "varType",
+                        "value": "ID"
+                    }
+                ],
+                "fingerprint": "0"
+            },
+            {
+                "accountId": "102181060",
+                "containerId": "1368498",
+                "variableId": "61",
+                "name": "element target",
+                "type": "aev",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "varType",
+                        "value": "TARGET"
+                    }
+                ],
+                "fingerprint": "0"
+            },
+            {
+                "accountId": "102181060",
+                "containerId": "1368498",
+                "variableId": "62",
+                "name": "element text",
+                "type": "aev",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "varType",
+                        "value": "TEXT"
+                    }
+                ],
+                "fingerprint": "0"
+            },
+            {
+                "accountId": "102181060",
+                "containerId": "1368498",
+                "variableId": "63",
+                "name": "element title",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "gtm.element.dataset.shared"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    }
+                ],
+                "fingerprint": "0"
+            },
+            {
+                "accountId": "102181060",
+                "containerId": "1368498",
+                "variableId": "55",
+                "name": "element url",
+                "type": "aev",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "varType",
+                        "value": "URL"
+                    }
+                ],
+                "fingerprint": "0"
+            },
+            {
+                "accountId": "102181060",
+                "containerId": "1368498",
+                "variableId": "56",
+                "name": "event",
+                "type": "e",
+                "fingerprint": "0"
+            },
+            {
+                "accountId": "102181060",
+                "containerId": "1368498",
+                "variableId": "64",
+                "name": "filed value",
+                "type": "c",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "function() {   var inputField = document.getElementById(\"myFormField\");   return inputField.value || \"\"; }"
+                    }
+                ],
+                "fingerprint": "0"
+            },
+            {
+                "accountId": "102181060",
+                "containerId": "1368498",
+                "variableId": "65",
+                "name": "history change source",
+                "type": "aev",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "varType",
+                        "value": "HISTORY_CHANGE_SOURCE"
+                    }
+                ],
+                "fingerprint": "0"
+            },
+            {
+                "accountId": "102181060",
+                "containerId": "1368498",
+                "variableId": "66",
+                "name": "history new state",
+                "type": "aev",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "varType",
+                        "value": "HISTORY_NEW_STATE"
+                    }
+                ],
+                "fingerprint": "0"
+            },
+            {
+                "accountId": "102181060",
+                "containerId": "1368498",
+                "variableId": "67",
+                "name": "history new url fragment",
+                "type": "aev",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "varType",
+                        "value": "HISTORY_NEW_URL_FRAGMENT"
+                    }
+                ],
+                "fingerprint": "0"
+            },
+            {
+                "accountId": "102181060",
+                "containerId": "1368498",
+                "variableId": "68",
+                "name": "history old state",
+                "type": "aev",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "varType",
+                        "value": "HISTORY_OLD_STATE"
+                    }
+                ],
+                "fingerprint": "0"
+            },
+            {
+                "accountId": "102181060",
+                "containerId": "1368498",
+                "variableId": "69",
+                "name": "history old url fragment",
+                "type": "aev",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "varType",
+                        "value": "HISTORY_OLD_URL_FRAGMENT"
+                    }
+                ],
+                "fingerprint": "0"
+            },
+            {
+                "accountId": "102181060",
+                "containerId": "1368498",
+                "variableId": "70",
+                "name": "referrer",
+                "type": "f",
+                "fingerprint": "0"
+            },
+            {
+                "accountId": "102181060",
+                "containerId": "1368498",
+                "variableId": "57",
+                "name": "url",
+                "type": "u",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "component",
+                        "value": "URL"
+                    }
+                ],
+                "fingerprint": "0"
+            },
+            {
+                "accountId": "102181060",
+                "containerId": "1368498",
+                "variableId": "71",
+                "name": "url hostname",
+                "type": "u",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "component",
+                        "value": "HOST"
+                    }
+                ],
+                "fingerprint": "0"
+            },
+            {
+                "accountId": "102181060",
+                "containerId": "1368498",
+                "variableId": "72",
+                "name": "url path",
+                "type": "u",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "component",
+                        "value": "PATH"
+                    }
+                ],
+                "fingerprint": "0"
+            }
+        ]
+    }
+}
